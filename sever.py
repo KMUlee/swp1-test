@@ -1,6 +1,6 @@
 from cgi import parse_qs
 import json
-from game import 
+from game import new_game, guess
 def application(environ):
     error = False
     if environ["REQUEST_METHOD"] != 'POST':
@@ -16,4 +16,6 @@ def application(environ):
                 error = True
         except:
             response = {'cod':'error', 'msg':'wrong HTTP method'}
-            error True
+            error = True
+    try:
+        request_body_size = int(environ.get)
